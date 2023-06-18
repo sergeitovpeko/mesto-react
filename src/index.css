@@ -43,5 +43,9 @@
 @import url(./blocks/popup/__form-error/popup__form-error.css);
 @import url(./blocks/popup/__form-error/_active/popup__form-error_active.css);
 @import url(./blocks/popup/__save/_inactive/popup__save_inactive.css);
+<<<<<<< HEAD
 @import url(./blocks/popup/__form-input/popup__form-input.css);
 @import url(./blocks/popup/__image/_type/popup_type_image.css);
+=======
+@import url(./blocks/popup/__form-input/popup__form-input.css);
+>>>>>>> 27a8d2ecf57cdd0b2901ac4cc946c5833446dab7
