@@ -1,24 +1,27 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  max-width: 880px;
-  width: 100%;
-  padding: 28px 0 0 0;
-  margin: 45px auto 40px auto;
-  border-bottom: 1px solid;
-  border-color: rgba(84, 84, 84, .7);
+  height: 74px;
+  margin: 45px 200px 0 200px;
+  width: calc(100% - 400px);
+  border-bottom: 1px rgba(84, 84, 84, 0.7) solid;
+  padding-bottom: 31px;
 }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1050px) {
   .header {
-    max-width: 581px;
-  } 
+    width: 80%;
+    margin: 0 auto;
+    padding: 28px 0 0 0;
+  }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 778px) {
   .header {
-    max-width: 320px;
-    margin: 28px auto 42px auto;
-    }
+    width: 90%;
+  }
 }
 
+@media screen and (max-width: 320px) {
+  .header {
+    height: 56px;
+  }
+}
