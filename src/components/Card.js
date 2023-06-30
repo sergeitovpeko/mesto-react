@@ -1,25 +1,31 @@
-import { useContext } from "react"
+import React from "react"
 import CurrentUserContext from "../contexts/CurrentUserContext"
 
-function Card(props) {
-  const currentUser = useContext(CurrentUserContext)
-  const isLiked = props.card.likes.some((user) => user._id === currentUser._id)
+function Card({
+  card,
+  onCardLike,
+  onCardDelete,
+  onCardClick,
+  onConfirmationPopup,
+}) {
+  const currentUser = React.useContext(CurrentUserContext)
+  const isLiked = card.likes.some((user) => user._id === currentUser._id)
   const likeButtonClassName = `elements__button elements__button_like ${
     isLiked ? "elements__button_like_active" : ""
   }`
-  const isOwner = props.card.owner._id === currentUser._id
+  const isOwner = card.owner._id === currentUser._id
 
   function handleLikeClick() {
-    props.onCardLike(props.card)
+    onCardLike(card)
   }
 
   function handleCardClick() {
-    props.onCardClick(props.card)
+    onCardClick(card)
   }
 
   function handleDeleteClick() {
-    props.onCardDelete(props.card)
-    props.onConfirmationPopup(true)
+    onCardDelete(card)
+    onConfirmationPopup(true)
   }
 
   return (
@@ -47,7 +53,7 @@ function Card(props) {
             type="button"
           ></button>
 
-          <p className="elements__likes-quantity">{props.card.likes.length}</p>
+          <p className="elements__likes-quantity">{card.likes.length}</p>
         </div>
       </div>
     </div>
